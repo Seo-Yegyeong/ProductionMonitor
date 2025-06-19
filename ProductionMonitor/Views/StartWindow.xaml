@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductionMonitor.Views"
+        xmlns:vm="clr-namespace:ProductionMonitor.ViewModels"
         mc:Ignorable="d"
         Title="Production Monitor" Height="568" Width="320">
     <Grid>
@@ -20,15 +21,11 @@
         <!-- 메인 콘텐츠 영역 -->
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
             <!-- 로고 이미지 -->
-            <!-- 시작하기 버튼 -->
-            <!-- 로고 이미지 -->
-            <!-- 시작하기 버튼 -->
-            <!-- 로고 이미지 -->
             <Image Source="/Assets/Img/MainLogo.png" 
                    Width="150" Height="150" 
                    Stretch="Uniform"/>
             <!-- 시작하기 버튼 -->
-            <Button Content="시작하기" Width="100" Height="40" Margin="25"/>
+            <Button Content="시작하기" Width="100" Height="40" Margin="25" Command="{Binding StartButtonCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
