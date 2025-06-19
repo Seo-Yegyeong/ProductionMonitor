@@ -1,0 +1,58 @@
+﻿<Window x:Class="ProductionMonitor.Views.ProductStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductionMonitor.Views"
+        mc:Ignorable="d"
+        Title="ProductStatus" Height="568" Width="320">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Image -->
+            <RowDefinition Height="Auto"/>
+            <!-- 생산 수량/불량 수량 -->
+            <RowDefinition/>
+            <!-- 재고 차트 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Button -->
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Margin="0 0 0 10">
+            <Button Content="🏠" Width="30" Height="30"
+                    Click="BackToHome_Click"
+                    HorizontalAlignment="Left"/>
+            <!-- Text="{Binding ProductName}" -->
+            <TextBlock Text="소금빵"
+                       FontSize="18" FontWeight="Bold" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       DockPanel.Dock="Top"/>
+            <!-- Source="{Binding ProductImage}" -->
+            
+        </DockPanel>
+        <Image Grid.Row="1" 
+               Source="/Assets/Img/SaltedBread.png"
+               Width="120" Height="120" 
+               HorizontalAlignment="Center" Margin="0 10"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0 10">
+            <StackPanel>
+                <TextBlock Text="생산 수량" HorizontalAlignment="Center"/>
+                <TextBox Text="{Binding ProducedCount}" Width="100" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="불량품 수량" HorizontalAlignment="Center"/>
+                <TextBox Text="{Binding DefectiveCount}" Width="100" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- 재고 차트 자리 -->
+        <StackPanel Grid.Row="3" Margin="0 10">
+            <TextBlock Text="재고 차트" Margin="0 0 0 5"/>
+            <Border BorderBrush="Gray" BorderThickness="1" Height="150"/>
+        </StackPanel>
+        <Button Grid.Row="4" Content="입고 요청" Height="50" 
+                Background="#CCE6FF" FontSize="16" Margin="0 10"/>
+    </Grid>
+</Window>
