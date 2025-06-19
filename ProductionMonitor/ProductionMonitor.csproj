@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
+    <Folder Include="Views\Modals\" />
   </ItemGroup>
 
   <ItemGroup>

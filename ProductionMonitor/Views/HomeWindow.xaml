@@ -1,0 +1,56 @@
+﻿<Window x:Class="ProductionMonitor.Views.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductionMonitor.Views"
+        mc:Ignorable="d"
+        Title="Home" Height="568" Width="320">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Filter -->
+            <RowDefinition Height="Auto"/>
+            <!-- Product List -->
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <!-- Footer -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Margin="0 0 0 10">
+            <TextBlock Text="Production Monitoring" 
+                       FontSize="16" FontWeight="Bold" 
+                       VerticalAlignment="Center" />
+            <Button Content="☰" Width="30" Height="30" 
+                    HorizontalAlignment="Right" 
+                    Click="HamburgerMenu_Click"/>
+        </DockPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0 0 0 10">
+            <TextBlock Text="상품 목록" VerticalAlignment="Center" FontWeight="SemiBold"/>
+            <ComboBox Width="100" Margin="10 0 0 0">
+                <ComboBoxItem Content="전체"/>
+                <ComboBoxItem Content="베스트"/>
+                <ComboBoxItem Content="신상품"/>
+            </ComboBox>
+        </StackPanel>
+        <ListView Grid.Row="2" Margin="0 0 0 10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="/Assets/Img/MainLogo.png" Width="50" Height="50"/>
+                        <TextBlock Text="{Binding Name}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+            <Button Content="이전" Width="80" Margin="5"/>
+            <Button Content="다음" Width="80" Margin="5"/>
+        </StackPanel>
+        <Button Grid.Row="4" Content="상품 등록" Height="50" 
+                Background="#CCE6FF" FontSize="16"
+                Command="{Binding ProductRegistrationModalCommand}"/>
+    </Grid>
+</Window>

@@ -12,17 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProductionMonitor.Views
+namespace ProductionMonitor.Views.Modals
 {
     /// <summary>
-    /// Interaction logic for StartWindow.xaml
+    /// Interaction logic for ProductRegistrationModalWindow.xaml
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class ProductRegistrationModalWindow : Window
     {
-        public StartWindow()
+        public ProductRegistrationModalWindow()
         {
             InitializeComponent();
-            this.DataContext = new ViewModels.StartVM();
         }
     }
 }

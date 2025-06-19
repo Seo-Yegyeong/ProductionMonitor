@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace ProductionMonitor.Views
 {
     /// <summary>
-    /// Interaction logic for StartWindow.xaml
+    /// Interaction logic for HomeWindow.xaml
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class HomeWindow : Window
     {
-        public StartWindow()
+        public HomeWindow()
         {
             InitializeComponent();
-            this.DataContext = new ViewModels.StartVM();
+            this.DataContext = new ViewModels.HomeVM();
         }
     }
 }
