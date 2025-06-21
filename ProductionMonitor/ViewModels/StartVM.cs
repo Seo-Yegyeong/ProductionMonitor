@@ -12,7 +12,7 @@ namespace ProductionMonitor.ViewModels
 {
     public partial class StartVM : ObservableObject
     {
-        [RelayCommand]
+
         private void StartButton()
         {
             // Logic to start the production monitor

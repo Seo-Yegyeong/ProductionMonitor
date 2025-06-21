@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductionMonitor.Views"
+        xmlns:viewmodels="clr-namespace:ProductionMonitor.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewmodels:HomeVM}"
         mc:Ignorable="d"
         Title="HomeWindow" Height="568" Width="320">
     

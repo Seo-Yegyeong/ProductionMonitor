@@ -25,7 +25,8 @@
                    Width="150" Height="150" 
                    Stretch="Uniform"/>
             <!-- 시작하기 버튼 -->
-            <Button Content="시작하기" Width="100" Height="40" Margin="25" Command="{Binding StartButtonCommand}"/>
+            <Button Content="시작하기" Width="100" Height="40" Margin="25" Click="Button_Click"/>
+            <!--Command="{Binding StartButtonCommand}"-->
         </StackPanel>
     </Grid>
 </Window>
